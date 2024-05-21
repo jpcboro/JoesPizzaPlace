@@ -4,7 +4,9 @@
     {
         public int PizzaId { get; set; }
         public string Name { get; set; } = string.Empty;
-   
+        public string[]? ToppingsAndBase { get; set; }
+        public double DiameterInInches { get; set; }
+
         public string? ShortDescription { get; set; }
         public string? LongDescription { get; set; }
         public string? AllergyInformation { get; set; }
