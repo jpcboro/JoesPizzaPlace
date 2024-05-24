@@ -1,0 +1,20 @@
+﻿@model JoesPizzaPlace.ViewModels.PizzaListViewModel
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Joe's Pizza Place</title>
+    </head>
+    <body>
+        <h1>@ViewBag.CurrentCategory</h1>
+        @foreach(var pizza in Model.Pizzas)
+    {
+        <div>
+            <h2>@pizza.Name</h2>
+            <h3>@pizza.Price.ToString("c")</h3>
+            <h4>@pizza.Category.CategoryName</h4>
+        </div>
+    }
+</body>
+</html>

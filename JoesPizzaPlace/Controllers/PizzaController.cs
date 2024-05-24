@@ -1,4 +1,5 @@
 ﻿using JoesPizzaPlace.Models;
+using JoesPizzaPlace.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JoesPizzaPlace.Controllers
@@ -17,7 +18,10 @@ namespace JoesPizzaPlace.Controllers
 
         public IActionResult List()
         {
-            return View(_pizzarepository.MockPizzas);
+            PizzaListViewModel pizzaListViewModel = new PizzaListViewModel(_pizzarepository.MockPizzas,
+                "Napoletana");
+
+            return View(pizzaListViewModel);
         }
 
     }

@@ -1,5 +1,6 @@
 ﻿using JoesPizzaPlace.Controllers;
 using JoesPizzaPlace.Models;
+using JoesPizzaPlace.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
 using System;
@@ -26,10 +27,10 @@ namespace JoesPizzaPlaceTests
 
             //Assert
             var viewResult = Assert.IsType<ViewResult>(result);
-            var model = Assert.IsAssignableFrom<IEnumerable<Pizza>>(viewResult.ViewData.Model);
+            var viewModel = Assert.IsAssignableFrom<PizzaListViewModel>(viewResult.ViewData.Model);
 
-            Assert.NotNull(model);
-            Assert.Equal(4, model.Count());
+            Assert.NotNull(viewModel);
+            Assert.Equal(4, viewModel.Pizzas.Count());
 
         }
 
